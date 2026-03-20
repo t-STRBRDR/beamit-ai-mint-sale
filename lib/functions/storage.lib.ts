@@ -1,4 +1,4 @@
-import { setCookie } from "nookies";
+import { setCookie } from "cookies-next";
 import { checkWindow, isInServer } from "./_helpers.lib";
 
 export function saveInLocalStorage(key: string, value: string) {
@@ -61,7 +61,7 @@ export function getCookie(cname: string) {
 }
 
 export function setCookieClient(key: string, value: string) {
-  setCookie(null, key, value, {
+  setCookie(key, value, {
     path: "/"
   });
 }

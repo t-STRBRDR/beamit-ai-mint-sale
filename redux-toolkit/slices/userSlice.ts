@@ -1,6 +1,6 @@
 import { userData } from "@/types/common.type";
 import { createSlice } from "@reduxjs/toolkit";
-import { destroyCookie } from "nookies";
+import { deleteCookie } from "cookies-next";
 import { userSliceData } from "../interfaces/interfaces";
 
 const initialState: userSliceData = {
@@ -28,8 +28,8 @@ export const userSlice = createSlice({
       // cookie.remove("privy_token");
       // cookie.remove("user");
 
-      destroyCookie(null, "user", { path: "/" });
-      destroyCookie(null, process.env.NEXT_APP_TOKEN_NAME!, { path: "/" });
+      deleteCookie("user", { path: "/" });
+      deleteCookie(process.env.NEXT_APP_TOKEN_NAME!, { path: "/" });
 
       window.location.href = "/login";
     }

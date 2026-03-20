@@ -38,7 +38,7 @@
     "next-progress": "^2.2.0",
     "next-pwa": "5.5.4",
     "next-seo": "^5.14.1",
-    "nookies": "^2.5.2",
+    "cookies-next": "^5.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-google-recaptcha": "^3.1.0",

@@ -2,14 +2,13 @@
 import { GetProfileDetails } from "@/api/functions/user.api";
 import { logout, setLoginData } from "@/reduxtoolkit/slices/userSlice";
 import { useQuery } from "@tanstack/react-query";
-import { parseCookies } from "nookies";
+import { getCookie } from "cookies-next";
 import { useEffect } from "react";
 import { useAppDispatch } from "../redux/useAppDispatch";
 import { useAppSelector } from "../redux/useAppSelector";
 
 const useUser = () => {
-  const cookies = parseCookies();
-  const token: string = cookies[process.env.NEXT_APP_TOKEN_NAME!];
+  const token = getCookie(process.env.NEXT_APP_TOKEN_NAME!) as string;
   const dispatch = useAppDispatch();
   const { userData } = useAppSelector((s) => s.userSlice);
 

@@ -5,7 +5,7 @@ import {
   globalCatchWarning
 } from "@/lib/functions/_helpers.lib";
 import axios, { AxiosError, AxiosResponse } from "axios";
-import { parseCookies } from "nookies";
+import { getCookie } from "cookies-next";
 import { baseUrlApi, sucessNotificationEndPoints } from "../endpoints";
 // import { refreshAccessToken } from "../functions/user.api";
 
@@ -14,9 +14,7 @@ const axiosInstance = axios.create({
 });
 
 axiosInstance.interceptors.request.use((config) => {
-  const cookies = parseCookies();
-
-  const token = cookies[process.env.NEXT_APP_TOKEN_NAME!];
+  const token = getCookie(process.env.NEXT_APP_TOKEN_NAME!);
   if (token && !!config.headers) {
     config.headers["x-access-token"] = `${token}`;
   }
