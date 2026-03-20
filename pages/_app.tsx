@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import EventListeners from "@/components/EventListener/EventListener";
-import { checkWindow } from "@/lib/functions/_helpers.lib";
 import { persistor, store } from "@/reduxtoolkit/store/store";
 import "@/styles/global.scss";
 import MuiThemeProvider from "@/themes/MuiThemeProvider";
@@ -16,16 +15,12 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Toaster } from "sonner";
 
 /**
- * It suppresses the useLayoutEffect warning when running in SSR mode
+ * Suppresses the useLayoutEffect warning when running in SSR mode.
+ * In React 19, useLayoutEffect no longer warns on the server for Pages Router,
+ * so this is kept as a no-op for backwards compatibility.
  */
 function fixSSRLayout() {
-  // suppress useLayoutEffect (and its warnings) when not running in a browser
-  // hence when running in SSR mode
-  if (!checkWindow()) {
-    React.useLayoutEffect = () => {
-      // console.log("layout effect")
-    };
-  }
+  // React 19 no longer warns for useLayoutEffect on the server
 }
 
 export const queryClient = new QueryClient({

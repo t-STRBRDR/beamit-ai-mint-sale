@@ -90,27 +90,23 @@ function Index() {
           <img src="beamit-png.png" alt="BeamIt logo" style={{ height: '50px' }} />
         </Link>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Link href="https://docs.google.com/forms/d/1TzmYPtzWh2udYO8RD-ZOSOpSWgewQK_WL4ZaS1UeTb4/viewform?edit_requested=true" passHref>
-            <a target="_blank" style={{ marginLeft: '30px', color: '#ff00f2', textDecoration: 'none', fontSize: '18px' }}>Join Ambassador program</a>
+          <Link href="https://docs.google.com/forms/d/1TzmYPtzWh2udYO8RD-ZOSOpSWgewQK_WL4ZaS1UeTb4/viewform?edit_requested=true" target="_blank" style={{ marginLeft: '30px', color: '#ff00f2', textDecoration: 'none', fontSize: '18px' }}>
+            Join Ambassador program
           </Link>
-          <Link href="https://whitelist.beamit.space/" passHref>
-            <a target="_blank" style={{ marginLeft: '30px', color: '#ff00f2', textDecoration: 'none', fontSize: '18px' }}>Join Alphamint Waitlist</a>
+          <Link href="https://whitelist.beamit.space/" target="_blank" style={{ marginLeft: '30px', color: '#ff00f2', textDecoration: 'none', fontSize: '18px' }}>
+            Join Alphamint Waitlist
           </Link>
-          <Link href="https://beamit.space/whitepaper-beamit-ai.pdf" passHref>
-            <a target="_blank" style={{ marginLeft: '30px', color: '#ff00f2', textDecoration: 'none', fontSize: '18px' }}>Whitepaper</a>
+          <Link href="https://beamit.space/whitepaper-beamit-ai.pdf" target="_blank" style={{ marginLeft: '30px', color: '#ff00f2', textDecoration: 'none', fontSize: '18px' }}>
+            Whitepaper
           </Link>
-          <Link href="https://note.com/takabitmap/n/n1bbd5faeb529" passHref>
-            <a target="_blank" style={{ marginLeft: '30px', color: '#ff00f2', textDecoration: 'none', fontSize: '18px' }}>白書</a>
+          <Link href="https://note.com/takabitmap/n/n1bbd5faeb529" target="_blank" style={{ marginLeft: '30px', color: '#ff00f2', textDecoration: 'none', fontSize: '18px' }}>
+            白書
           </Link>
-          <Link href="https://twitter.com/beamit_ai" passHref>
-            <a target="_blank" style={{ marginLeft: '30px' }}>
-              <img src="twitter.png" alt="Twitter" style={{ width: '32px', height: '32px' }} />
-            </a>
+          <Link href="https://twitter.com/beamit_ai" target="_blank" style={{ marginLeft: '30px' }}>
+            <img src="twitter.png" alt="Twitter" style={{ width: '32px', height: '32px' }} />
           </Link>
-          <Link href="https://discord.gg/f2mcJWwVNw" passHref>
-            <a target="_blank" style={{ marginLeft: '30px' }}>
-              <img src="discord.png" alt="Discord" style={{ width: '32px', height: '32px' }} />
-            </a>
+          <Link href="https://discord.gg/f2mcJWwVNw" target="_blank" style={{ marginLeft: '30px' }}>
+            <img src="discord.png" alt="Discord" style={{ width: '32px', height: '32px' }} />
           </Link>
         </div>
       </header>
