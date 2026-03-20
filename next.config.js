@@ -17,15 +17,15 @@ module.exports = withPWA({
     includePaths: [path.join(__dirname, "styles")]
   },
   images: {
-    domains: ["career-utility.dedicateddevelopers.us"]
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "career-utility.dedicateddevelopers.us"
+      }
+    ]
   },
-  swcMinify: true,
   compress: true,
-  optimizeFonts: true,
-  devIndicators: {
-    autoPrerender: false,
-    buildActivityPosition: "bottom-right"
-  },
+  devIndicators: false,
   compiler: {
     removeConsole: process.env.NODE_ENV === "production"
   },
