@@ -1,16 +1,8 @@
 /** @type {import('next').NextConfig} */
-const withPWA = require("next-pwa");
+const withSerwist = require("@serwist/next").default;
 const path = require("path");
-const runtimeCaching = require("next-pwa/cache");
 
-module.exports = withPWA({
-  pwa: {
-    dest: "public",
-    register: true,
-    skipWaiting: true,
-    runtimeCaching,
-    disable: process.env.NODE_ENV === "development"
-  },
+const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
   sassOptions: {
@@ -33,4 +25,12 @@ module.exports = withPWA({
     NEXT_APP_BASE_URL: process.env.NEXT_APP_BASE_URL,
     NEXT_APP_PROJECT_NAME: process.env.NEXT_APP_PROJECT_NAME
   }
-});
+};
+
+module.exports = process.env.NODE_ENV === "development"
+  ? nextConfig
+  : withSerwist({
+      swSrc: "app/sw.ts",
+      swDest: "public/sw.js",
+      disable: process.env.NODE_ENV === "development"
+    })(nextConfig);
